@@ -1,5 +1,5 @@
 <p>
-    <a href="create.php" class="btn btn-success">
+    <a href="/products/create" class="btn btn-success">
         Create Product
     </a>
 </p>

@@ -17,9 +17,24 @@
             ]);
         }
 
-        public function create()
+        public function create(Router $router)
         {
-            echo "Create page";            
+            $errors = [];
+            $product = [
+                'title' => '',
+                'description' => '',
+                'image' => '',
+                'price' => ''
+            ];
+
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // Let save the data to the Database!
+            }
+
+            return $router->renderView('products/create', [
+                'errors' => $errors,
+                'product' => $product
+            ]);          
         }
 
         public function update()
