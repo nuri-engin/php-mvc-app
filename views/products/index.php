@@ -41,17 +41,15 @@
                 <td><?php echo $product['price'] ?></td>
                 <td><?php echo $product['create_date'] ?></td>
                 <td> 
-                <a 
-                    href="update.php?id=<?php echo $product['id'] ?>" 
-                    class="btn btn-sm btn-outline-primary">
-                    Edit
-                </a>
-                <form method="POST" action="delete.php">
-                    <input type="hidden" name="id" value="<?php echo $product['id'] ?>" />
-                    <button type="submit" class="btn btn-sm btn-outline-danger"> 
-                        Delete
-                    </button> 
-                </form>
+                    <a 
+                        href="update.php?id=<?php echo $product['id'] ?>" 
+                        class="btn btn-sm btn-outline-primary">
+                        Edit
+                    </a>
+                    <form method="post" action="/products/delete" style="display: inline-block">
+                        <input  type="hidden" name="id" value="<?php echo $product['id'] ?>"/>
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
                 </td>
             </tr>
         <?php endforeach; ?>

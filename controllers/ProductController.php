@@ -54,9 +54,17 @@ use app\Router;
             echo "Update page";            
         }
 
-        public function delete()
+        public function delete(Router $router)
         {
-            echo "Delete page";            
-        }
+            $id = $_POST['id'] ?? null;
+
+            if (!$id) {
+                header('Location /products');
+                exit;
+            }
+
+            $router->db->deleteProduct($id);
+            header('Location /products');
+    }
     }
 ?>

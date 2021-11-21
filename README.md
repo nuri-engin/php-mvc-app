@@ -23,3 +23,14 @@ Just another PHP-MVC app!
 - Restart the LAMPP: `sudo /opt/lampp/lampp restart`   
 - Destroy 8080 port: `sudo lsof -t -i:8080`
 
+#### Some useful code snippets 
+- Echo the variables  
+    ```          
+    echo 'Describe here...';
+    echo '<pre>';
+    var_dump($any_variable);
+    echo '</pre>';
+    exit;
+    ```          
+
+

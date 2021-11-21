@@ -22,9 +22,12 @@
 
         public function getProducts($search = '')
         {
+            // TODO: Move the SQL queries into the constants to achieve single-responsibilty approach.
+            // See the sample approach at '/constants/QUERIES-README.md'
+            // TODO: Use constant variables for the DB fields/tables etc...
+            // See the sample approach at '/constants/FIELDS-README.md'
+            // See the sample approach at '/constants/TABLES-README.md'
             if (!empty($search)) {
-                // TODO: Move the SQL queries into the constants to achieve single-responsibilty approach.
-                // See the sample approach at '/constants/QUERIES-README.md'
                 $statment = $this->pdo->prepare('SELECT * FROM products WHERE title LIKE :title ORDER BY create_date DESC');
                 $statment->bindValue(':title', "%$search%");
             } else {
@@ -38,8 +41,9 @@
 
         public function createProduct(Product $product)
         {
-            // TODO: Use constant variables for the DB fields/properties/column names.
+            // TODO: Use constant variables for the DB fields/tables etc...
             // See the sample approach at '/constants/FIELDS-README.md'
+            // See the sample approach at '/constants/TABLES-README.md'
             $statement = $this->pdo->prepare("INSERT INTO products (title, image, description, price, create_date)
                 VALUES (:title, :image, :description, :price, :date)");
             $statement->bindValue(':title', $product->title);
@@ -47,6 +51,17 @@
             $statement->bindValue(':description', $product->description);
             $statement->bindValue(':price', $product->price);
             $statement->bindValue(':date', date('Y-m-d H:i:s'));
+
+            $statement->execute();
+        }
+
+        public function deleteProduct($id)
+        {
+            // TODO: Use constant variables for the DB fields/tables etc...
+            // See the sample approach at '/constants/FIELDS-README.md'
+            // See the sample approach at '/constants/TABLES-README.md'
+            $statement = $this->pdo->prepare('DELETE FROM products WHERE id = :id');
+            $statement->bindValue(':id', $id);
 
             $statement->execute();
         }
