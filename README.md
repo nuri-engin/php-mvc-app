@@ -10,16 +10,16 @@ Just another PHP-MVC application!
 #### Database schema
 ```
     Table: products
-    +---------------+--------------+------+-----+---------+-----------+
-    | Field         | Type         | Null | Key | Default | Extra     |
-    +---------------+--------------+------+-----+---------+-----------+
-    | id            | int(11)      | YES  | MUL | NULL    | auto .inc |
-    | title         | varchar(100) | YES  | MUL | NULL    |           |
-    | description   | varchar(100) | YES  | MUL | NULL    |           |
-    | image         | varchar(100) | YES  | MUL | NULL    |           |
-    | price         | varchar(100) | YES  | MUL | NULL    |           |
-    | create_date   | varchar(100) | YES  | MUL | NULL    |           |
-    +---------------+--------------+------+-----+---------+-----------+
+    +---------------+--------------+------+----------+-----------+
+    | Field         | Type          | Null | Default | Extra     |
+    +---------------+--------------+-------+---------+-----------+
+    | id            | int(11)       | NO   | None    | auto .inc |
+    | title         | varchar(512)  | NO   | None    |           |
+    | description   | longtext      | YES  | NULL    |           |
+    | image         | varchar(2048) | YES  | NULL    |           |
+    | price         | decimal(10,2) | NO   | None    |           |
+    | create_date   | datetime      | YES  | None    |           |
+    +---------------+--------------+-------+---------+-----------+
 ```
 
 #### How to start the application 
