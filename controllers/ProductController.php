@@ -64,6 +64,7 @@ use app\Router;
 
         public function update(Router $router)
         {
+            $errors = [];
             $id = $_GET['id'] ?? null;
             
             if (!$id) {
@@ -73,8 +74,25 @@ use app\Router;
     
             $productData = $router->db->getProductById($id);
 
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $productData['title'] = $_POST['title'];
+                $productData['description'] = $_POST['description'];
+                $productData['price'] = $_POST['price'];
+                $productData['imageFile'] = $_FILES['image'] ?? null;
+    
+                $product = new Product();
+                $product->load($productData);
+                $product->save();
+
+                if (empty($errors)) {
+                    header('Location: /products');
+                    exit;    
+                }
+            }
+
             $router->renderView('products/update', [
-                'product' => $productData
+                'product' => $productData,
+                'errors' => $errors
             ]);
         }
     }

@@ -77,5 +77,25 @@
     
             return $statement->fetch(PDO::FETCH_ASSOC);
         }
+
+        public function updateProduct(Product $product)
+        {
+            // TODO: Move the SQL queries into the constants to achieve single-responsibilty approach.
+            // See the sample approach at '/constants/QUERIES-README.md'
+            // TODO: Use constant variables for the DB fields/tables etc...
+            // See the sample approach at '/constants/FIELDS-README.md'
+            // See the sample approach at '/constants/TABLES-README.md'
+            $statement = $this->pdo->prepare("UPDATE products SET title = :title, 
+                                            image = :image, 
+                                            description = :description, 
+                                            price = :price WHERE id = :id");
+            $statement->bindValue(':title', $product->title);
+            $statement->bindValue(':image', $product->imagePath);
+            $statement->bindValue(':description', $product->description);
+            $statement->bindValue(':price', $product->price);
+            $statement->bindValue(':id', $product->id);
+
+            $statement->execute();
+        }
     }
 ?>
