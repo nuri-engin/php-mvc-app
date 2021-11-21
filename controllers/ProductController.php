@@ -71,7 +71,7 @@ use app\Router;
                 exit;
             }
     
-            $productData = $router->database->getProductById($id);
+            $productData = $router->db->getProductById($id);
 
             $router->renderView('products/update', [
                 'product' => $productData
