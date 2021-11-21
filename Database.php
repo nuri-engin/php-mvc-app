@@ -10,10 +10,9 @@
         
         public function __construct()
         {
-
-                // TODO: Get the connection values from constants/environments.
-                // See the sample approach at '/constants/DB-README.md'
-                $this->pdo = new PDO('mysql:host=127.0.0.1;port=3306;dbname=products_crud', 'root', '');
+            // TODO: Get the connection values from constants/environments.
+            // See the sample approach at '/constants/DB-README.md'
+            $this->pdo = new PDO('mysql:host=127.0.0.1;port=3306;dbname=products_crud', 'root', '');
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
 

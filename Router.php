@@ -33,28 +33,25 @@
             ob_start();
             include_once __DIR__."/views/$view.php";
             $content = ob_get_clean();
-            include_once __DIR__."/views/layouts/index.php";
+            include_once __DIR__."/views/_layout.php";
         }
 
         public function resolve()
         {
-            $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
-            $method = $_SERVER['REQUEST_METHOD'];
-
-            // Step 01: Determine GET and POST routes to update the function.
-            if ($method === 'GET') {
-                $fn = $this->getRoutes[$currentUrl] ?? null;
+            $method = strtolower($_SERVER['REQUEST_METHOD']);
+            $url = $_SERVER['PATH_INFO'] ?? '/';
+    
+            if ($method === 'get') {
+                $fn = $this->getRoutes[$url] ?? null;
             } else {
-                $fn = $this->postRoutes[$currentUrl] ?? null;
+                $fn = $this->postRoutes[$url] ?? null;
             }
-
-            // Step 01: Handle the router function for delegation.
-            if ($fn) {
-                call_user_func($fn, $this);
-            } else {
-                echo "Page not found!";
+            if (!$fn) {
+                echo 'Page not found';
+                exit;
             }
-        }   
+            echo call_user_func($fn, $this);
+        }
     }
 
 ?>

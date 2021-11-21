@@ -10,35 +10,25 @@
     </div>
 <?php endif ?>
 
-<form action="" method="POST" enctype="multipart/form-data">
-
+<form method="post" enctype="multipart/form-data">
     <?php if ($product['image']): ?>
-        <img src="/<?php echo $product['image'] ?>" class="update_image">
-    <?php elseif (!$product['image']): ?>
-        <?php echo "This product has no image!" ?>
+        <img src="/<?php echo $product['image'] ?>" class="product-img-view">
     <?php endif; ?>
-
-    <hr>
-    
-    <div class="mb-3">
-        <label class="form-label">Product Image</label>
-        <input type="file" name="image" class="form-control">
+    <div class="form-group">
+        <label>Product Image</label><br>
+        <input type="file" name="image">
     </div>
-    
-    <div class="mb-3">
-        <label class="form-label">Product Title</label>
+    <div class="form-group">
+        <label>Product title</label>
         <input type="text" name="title" class="form-control" value="<?php echo $product['title'] ?>">
     </div>
-
-    <div class="mb-3">
-        <label class="form-label">Product Description</label>
-        <textarea name="description" class="form-control" value="<?php echo $product['description'] ?>"></textarea>
+    <div class="form-group">
+        <label>Product description</label>
+        <textarea class="form-control" name="description"><?php echo $product['description'] ?></textarea>
     </div>
-
-    <div class="mb-3">
-        <label class="form-label">Product Price</label>
-        <input type="number" name="price" step=".01" class="form-control" value="<?php echo $product['price'] ?>">
+    <div class="form-group">
+        <label>Product price</label>
+        <input type="number" step=".01" name="price" class="form-control" value="<?php echo $product['price'] ?>">
     </div>
-
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
