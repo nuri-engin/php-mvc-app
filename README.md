@@ -1,11 +1,7 @@
 # php-mvc-app
-
-Just another PHP-MVC application!
-
-#### Good to know notes 
-- Ensure to install XAMPP to your computer
-- Ensure to run the XAMPP for MySQL 
-- Ensure to create a MySQL database with name of `products_crud`
+#### How to start the application 
+- Clone to repo to your local, `cd` into `public` folder and run the command: `php -S localhost:8080`
+- Open a browser and direct to the `http://localhost:8080`
 
 #### Database schema
 ```
@@ -22,9 +18,10 @@ Just another PHP-MVC application!
     +---------------+--------------+-------+---------+-----------+
 ```
 
-#### How to start the application 
-- Clone to repo to your local, `cd` into `public` folder and run the command: `php -S localhost:8080`
-- Open a browser and direct to the `http://localhost:8080`
+#### Good to know notes 
+- Ensure to install XAMPP to your computer
+- Ensure to run the XAMPP for MySQL 
+- Ensure to create a MySQL database with name of `products_crud`
 
 ---
 #### Some useful command for the Ubuntu/Linux
