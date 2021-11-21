@@ -6,16 +6,16 @@
 #### Database schema
 ```
     Database:products_crud - Table: products
-    +---------------+---------------+------+----------+-----------+
+    +---------------+---------------+------+---------+-----------+
     | Field         | Type          | Null | Default | Extra     |
-    +---------------+---------------+-------+---------+-----------+
+    +---------------+---------------+------+---------+-----------+
     | id            | int(11)       | NO   | None    | auto .inc |
     | title         | varchar(512)  | NO   | None    |           |
     | description   | longtext      | YES  | NULL    |           |
     | image         | varchar(2048) | YES  | NULL    |           |
     | price         | decimal(10,2) | NO   | None    |           |
     | create_date   | datetime      | YES  | None    |           |
-    +---------------+---------------+-------+---------+-----------+
+    +---------------+---------------+------+---------+-----------+
 ```
 
 #### Good to know notes 
