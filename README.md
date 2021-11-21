@@ -11,14 +11,14 @@ Just another PHP-MVC app!
 - Coming soon... 
 
 #### How to start the application 
-- Clone to repo to your local and run the command: `php -S localhost:8080`
+- Clone to repo to your local, `cd` into `public` folder and run the command: `php -S localhost:8080`
 - Open a browser and direct to the `http://localhost:8080`
 
 ---
 #### Some useful command for the Ubuntu/Linux
-- Run the XAMPP Panel: `> sudo /opt/lampp/manager-linux-x64.run`
+- Run the XAMPP Panel: `sudo /opt/lampp/manager-linux-x64.run`
 - Start the LAMPP: `sudo /opt/lampp/lampp start`
 - Stop the LAMPP: `sudo /opt/lampp/lampp stop`
 - Restart the LAMPP: `sudo /opt/lampp/lampp restart`   
-- Destroy 8080 port: `> sudo lsof -t -i:8080`
+- Destroy 8080 port: `sudo lsof -t -i:8080`
 
