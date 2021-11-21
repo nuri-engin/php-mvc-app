@@ -33,10 +33,9 @@
             <tr>
                 <th scope="row"><?php echo $i + 1 ?></th>
                 <td>
-                    <img
-                        class="thumb-image" 
-                        src="/<?php echo $product['image'] ?>" 
-                    />
+                    <?php if ($product['image']): ?>
+                        <img src="/<?php echo $product['image'] ?>" alt="<?php echo $product['title'] ?>" class="product-img">
+                    <?php endif; ?>
                 </td>
                 <td><?php echo $product['title'] ?></td>
                 <td><?php echo $product['price'] ?></td>
