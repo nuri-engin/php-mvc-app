@@ -1,5 +1,5 @@
 <p>
-    <a href="index.php" class="btn btn-success">
+    <a href="/products" class="btn btn-secondary">
         Go Back!
     </a>
 </p>

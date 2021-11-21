@@ -48,12 +48,7 @@ use app\Router;
                 'product' => $productData
             ]);          
         }
-
-        public function update()
-        {
-            echo "Update page";            
-        }
-
+        
         public function delete(Router $router)
         {
             $id = $_POST['id'] ?? null;
@@ -65,6 +60,22 @@ use app\Router;
 
             $router->db->deleteProduct($id);
             header('Location /products');
-    }
+        }
+
+        public function update(Router $router)
+        {
+            $id = $_GET['id'] ?? null;
+            
+            if (!$id) {
+                header('Location: /products');
+                exit;
+            }
+    
+            $productData = $router->database->getProductById($id);
+
+            $router->renderView('products/update', [
+                'product' => $productData
+            ]);
+        }
     }
 ?>

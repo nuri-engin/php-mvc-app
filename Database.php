@@ -65,5 +65,17 @@
 
             $statement->execute();
         }
+
+        public function getProductById($id)
+        {
+            // TODO: Use constant variables for the DB fields/tables etc...
+            // See the sample approach at '/constants/FIELDS-README.md'
+            // See the sample approach at '/constants/TABLES-README.md'
+            $statement = $this->pdo->prepare('SELECT * FROM products WHERE id = :id');
+            $statement->bindValue(':id', $id);
+            $statement->execute();
+    
+            return $statement->fetch(PDO::FETCH_ASSOC);
+        }
     }
 ?>
