@@ -4,6 +4,8 @@ namespace app\models;
 
 class Product
 {
+    // TODO: Use constant variables for the DB fields/properties/column names.
+    // See the sample approach at '/constants/FIELDS-README.md'
     public ?int $id = null;
     public ?string $title = null;
     public ?string $description = null;
@@ -52,6 +54,8 @@ class Product
                 mkdir(dirname(__DIR__.'/../public/'.$this->imagePath));
                 move_uploaded_file($this->image['tmp_name'], __DIR__.'/../public/'.$this->imagePath);
             }
+
+            
         }
 
         return $errors;
