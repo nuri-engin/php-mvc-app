@@ -9,7 +9,7 @@ Just another PHP-MVC application!
 
 #### Database schema
 ```
-    Table: products
+    Database:products_crud - Table: products
     +---------------+--------------+------+----------+-----------+
     | Field         | Type          | Null | Default | Extra     |
     +---------------+--------------+-------+---------+-----------+
