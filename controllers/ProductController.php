@@ -11,6 +11,7 @@
             $products = $router->db->getProducts($search);
 
             // Better: return $router->renderView($PATHS->PRODUCTS->index);
+            // See the sample approach at '/constants/PATHS-README.md'
             return $router->renderView('products/index',[
                 'products' => $products,
                 'search' => $search

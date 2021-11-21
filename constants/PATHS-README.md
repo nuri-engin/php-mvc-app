@@ -4,13 +4,18 @@ ie:
 
 ```
 // #01: Declare the constants;
+$PATHS = {};
 $products = "products";
 
-PRODUCTS: {
+PATHS->PRODUCTS: {
     index: "$products/index",
     create: "$products/create",
     update: "$products/update"
 }
+
+return PATHS;
+
+---
 
 // #02: Use the constants in the app;
 $PATHS = require_once "/constants/PATHS";
