@@ -46,10 +46,6 @@ use app\Router;
                 }
             }
 
-            echo '<pre>';
-            var_dump($productData);
-            echo '</pre>';
-
             return $router->renderView('products/create', [
                 'errors' => $errors,
                 'product' => $productData
