@@ -19,6 +19,7 @@ Just another PHP-MVC app!
 - Run the XAMPP Panel: `sudo /opt/lampp/manager-linux-x64.run`
 - Start the LAMPP: `sudo /opt/lampp/lampp start`
 - Stop the LAMPP: `sudo /opt/lampp/lampp stop`
+- Stop the Apache server: `sudo /etc/init.d/apache2 stop`
 - Restart the LAMPP: `sudo /opt/lampp/lampp restart`   
 - Destroy 8080 port: `sudo lsof -t -i:8080`
 
