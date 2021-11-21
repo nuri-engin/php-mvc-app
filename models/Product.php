@@ -3,6 +3,7 @@
 namespace app\models;
 
 use app\Database;
+use app\helpers\UtilHelper;
 
 class Product
 {
@@ -51,7 +52,7 @@ class Product
                 }
 
                 // Need to be sure PATH of file should be unique
-                $this->imagePath = 'images/'.randomString(8).'/'.$this->imageFile;
+                $this->imagePath = 'images/'.UtilHelper::randomString(8).'/'.$this->imageFile;
                 
                 mkdir(dirname(__DIR__.'/../public/'.$this->imagePath));
                 move_uploaded_file($this->image['tmp_name'], __DIR__.'/../public/'.$this->imagePath);
