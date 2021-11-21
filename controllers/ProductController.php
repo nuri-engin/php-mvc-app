@@ -35,15 +35,12 @@ use app\Router;
                 $productData['description'] = $_POST['description'];
                 $productData['imageFile'] = $_FILES['image'] ?? null;
                 $productData['price'] = (float)$_POST['price'];
-
                 $product = new Product();
                 $product->load($productData);
-                $errors = $product->save();
+                $product->save();
 
-                if (empty($errors)) {
-                    header('Location /products');
-                    exit;                        
-                }
+                header('Location: /products');
+                exit;
             }
 
             return $router->renderView('products/create', [

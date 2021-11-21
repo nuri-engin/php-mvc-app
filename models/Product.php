@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\Database;
+
 class Product
 {
     // TODO: Use constant variables for the DB fields/properties/column names.
@@ -55,7 +57,13 @@ class Product
                 move_uploaded_file($this->image['tmp_name'], __DIR__.'/../public/'.$this->imagePath);
             }
 
+            $db = Database::$db;
             
+            if ($this->id) {
+                $db->updateProduct($this);
+            } else {
+                $db->createProduct($this);
+            }
         }
 
         return $errors;
