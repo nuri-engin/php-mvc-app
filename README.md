@@ -1,6 +1,6 @@
 # php-mvc-app
 
-Just another PHP-MVC app!
+Just another PHP-MVC application!
 
 #### Good to know notes 
 - Ensure to install XAMPP to your computer
