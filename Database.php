@@ -2,7 +2,8 @@
 
     namespace app;
 
-    use PDO;
+use app\models\Product;
+use PDO;
 
     class Database 
     {
@@ -30,6 +31,21 @@
             $statment->execute();
             
             return $statment->fetchAll(PDO::FETCH_ASSOC); // Fetch as Associative array.
+        }
+
+        public function createProduct(Product $product)
+        {
+            // TODO: Use constant variables for the DB fields/properties/column names.
+            // See the sample approach at '/constants/FIELDS-README.md'
+            $statement = $this->pdo->prepare("INSERT INTO products (title, image, description, price, create_date)
+                VALUES (:title, :image, :description, :price, :date)");
+            $statement->bindValue(':title', $product->title);
+            $statement->bindValue(':image', $product->imagePath);
+            $statement->bindValue(':description', $product->description);
+            $statement->bindValue(':price', $product->price);
+            $statement->bindValue(':date', date('Y-m-d H:i:s'));
+
+            $statement->execute();
         }
     }
 ?>
