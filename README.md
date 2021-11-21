@@ -8,7 +8,19 @@ Just another PHP-MVC application!
 - Ensure to create a MySQL database with name of `products_crud`
 
 #### Database schema
-- Coming soon... 
+```
+    Table: products
+    +---------------+--------------+------+-----+---------+-----------+
+    | Field         | Type         | Null | Key | Default | Extra     |
+    +---------------+--------------+------+-----+---------+-----------+
+    | id            | int(11)      | YES  | MUL | NULL    | auto .inc |
+    | title         | varchar(100) | YES  | MUL | NULL    |           |
+    | description   | varchar(100) | YES  | MUL | NULL    |           |
+    | image         | varchar(100) | YES  | MUL | NULL    |           |
+    | price         | varchar(100) | YES  | MUL | NULL    |           |
+    | create_date   | varchar(100) | YES  | MUL | NULL    |           |
+    +---------------+--------------+------+-----+---------+-----------+
+```
 
 #### How to start the application 
 - Clone to repo to your local, `cd` into `public` folder and run the command: `php -S localhost:8080`
